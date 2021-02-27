@@ -5,7 +5,7 @@ import noImage from "../Card/no-image.png";
 function Card({ poster, year }) {
   return (
     <div>
-      <Box className="card" borderRadius="3xl" backgroundColor="#ffb703">
+      <Box className="card" borderRadius="3xl" backgroundColor="#e9c46a">
         <Image
           className="card-img"
           src={poster}
@@ -13,7 +13,7 @@ function Card({ poster, year }) {
           style={{ borderRadius: "10px" }}
           fallbackSrc={noImage}
         />
-        <div className="movie-title">{year}</div>
+        <div className="movie-year">{year}</div>
       </Box>
     </div>
   );

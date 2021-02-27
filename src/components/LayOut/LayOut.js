@@ -3,8 +3,16 @@ import "../LayOut/LayOut.css";
 import { SimpleGrid, Image } from "@chakra-ui/react";
 import Card from "../Card/Card";
 import nodata from "./nodata.svg";
+import loading from "./loading.svg";
 
 function Layout(props) {
+  if (props.loader) {
+    return (
+      <SimpleGrid marginTop="100px">
+        <Image src={loading} boxSize="md" margin="auto" />
+      </SimpleGrid>
+    );
+  }
   return (
     <>
       {props.movie.Search ? (
@@ -21,7 +29,7 @@ function Layout(props) {
       ) : (
         <SimpleGrid marginTop="100px">
           {/* <div className="no-data">No Movie found</div> */}
-          <Image src={nodata} boxSize="md" align="center" margin="auto" />
+          <Image src={nodata} boxSize="md" margin="auto" />
         </SimpleGrid>
       )}
     </>

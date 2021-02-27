@@ -7,12 +7,6 @@
   box-shadow: 5px 3px 2px #979dac;
 }
 .card:hover {
-  background-color: #fb8500;
+  background-color: #f4a261;
   transform: translateY(-20px);
-}
-.no-data {
-  font-size: 50px;
-  color: black;
-  text-align: center;
-  margin: 6rem auto;
 }
