@@ -20,12 +20,11 @@ function Movie() {
     const resJson = await response.json();
     setMovie(resJson);
   };
-  // console.log(movie);
   return (
     <>
       <NavBar setSearch={setSearch} fetchApi={fetchApi} disabled={true} />
       <Box bg="#f7c59f">
-        <Layout movie={movie} loader={loader} />
+        <Layout movie={movie} loader={loader} search={search} />
       </Box>
     </>
   );

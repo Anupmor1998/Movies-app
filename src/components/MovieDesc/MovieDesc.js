@@ -5,6 +5,8 @@ import NavBar from "../NavBar/NavBar";
 import "./MovieDesc.css";
 import noImage from "../Card/no-image.png";
 import loadingImg from "../LayOut/loading1.svg";
+import nodata from "../LayOut/nodata.svg";
+
 function MovieDesc(props) {
   const [loading, setLoading] = useState(true);
   const [movieDesc, setMovieDesc] = useState(null);
@@ -20,7 +22,7 @@ function MovieDesc(props) {
     };
     fetchMovieDesc();
   }, []);
-  console.log(movieDesc);
+
   if (loading) {
     return (
       <>
@@ -51,29 +53,23 @@ function MovieDesc(props) {
               fallbackSrc={noImage}
             />
             <div className="block">
-              <div className="sub-block">Movie Title: {movieDesc.Title}</div>
-              <div className="sub-block">
-                Imdb Rating: ⭐{movieDesc.imdbRating}
-              </div>
-              <div className="sub-block">Released On: {movieDesc.Released}</div>
+              <div>Movie Title: {movieDesc.Title}</div>
+              <div>Imdb Rating: ⭐{movieDesc.imdbRating}</div>
+              <div>Released On: {movieDesc.Released}</div>
               <div className="sub-block">Director: {movieDesc.Director}</div>
-              <div className="sub-block">Star Cast: {movieDesc.Actors}</div>
-              <div className="sub-block">Country: {movieDesc.Country}</div>
-              <div className="sub-block">
-                Box Office Collection: {movieDesc.BoxOffice}
-              </div>
-              <div className="sub-block">Genre: {movieDesc.Genre}</div>
-              <div className="sub-block">Language: {movieDesc.Language}</div>
-              <div className="sub-block">
-                Production: {movieDesc.Production}
-              </div>
+              <div>Star Cast: {movieDesc.Actors}</div>
+              <div>Country: {movieDesc.Country}</div>
+              <div>Box Office Collection: {movieDesc.BoxOffice}</div>
+              <div>Genre: {movieDesc.Genre}</div>
+              <div>Language: {movieDesc.Language}</div>
+              <div>Production: {movieDesc.Production}</div>
             </div>
           </Box>
           <div className="plot">Movie Plot: {movieDesc.Plot}</div>
         </Box>
       ) : (
-        <Box paddingTop="100px">
-          <h1>No Movie</h1>
+        <Box paddingTop="100px" backgroundColor="#f7c59f" height="100vh">
+          <Image src={nodata} boxSize="md" margin="auto" />
         </Box>
       )}
     </>

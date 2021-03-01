@@ -30,7 +30,7 @@ function NavBar(props) {
           <img src={imdb} width="60" />
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar color="danger">
+        <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             {/* <NavItem>
               <NavLink href="/">Home</NavLink>
