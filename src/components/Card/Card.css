@@ -11,3 +11,15 @@
   margin: 10px auto;
   font-weight: bold;
 }
+.card {
+  width: 14rem;
+  height: 15rem;
+  margin: 30px auto;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 5px 3px 2px #979dac;
+}
+.card:hover {
+  background-color: #f4a261;
+  transform: translateY(-20px);
+}

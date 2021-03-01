@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../LayOut/LayOut";
 import NavBar from "../NavBar/NavBar";
-
+import { SimpleGrid, Image, Box } from "@chakra-ui/react";
 function Movie() {
   const [search, setSearch] = useState("");
   const [movie, setMovie] = useState([]);
@@ -20,10 +20,13 @@ function Movie() {
     const resJson = await response.json();
     setMovie(resJson);
   };
+  // console.log(movie);
   return (
     <>
-      <NavBar setSearch={setSearch} fetchApi={fetchApi} />
-      <Layout movie={movie} loader={loader} />
+      <NavBar setSearch={setSearch} fetchApi={fetchApi} disabled={true} />
+      <Box bg="#f7c59f">
+        <Layout movie={movie} loader={loader} />
+      </Box>
     </>
   );
 }

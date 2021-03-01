@@ -1,0 +1,35 @@
+.box {
+  display: flex;
+  flex-direction: row;
+}
+.block {
+  display: flex;
+  justify-content: right;
+  padding: 0 30px;
+  margin-top: 50px;
+  height: 50vh;
+  width: 100vh;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: bold;
+}
+.img {
+  margin: 50px 50px 30px;
+  border-radius: 30px;
+  height: 40vh;
+}
+.plot {
+  padding: 10px 30px;
+  font-size: 15px;
+}
+.go-back {
+  display: flex;
+  padding-top: 100px;
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.go-back:hover {
+  color: beige;
+  text-decoration: none;
+}

@@ -49,7 +49,14 @@ function NavBar(props) {
             </UncontrolledDropdown> */}
           </Nav>
           <NavbarText>
-            <SearchBar setSearch={props.setSearch} fetchApi={props.fetchApi} />
+            {props.disabled ? (
+              <SearchBar
+                setSearch={props.setSearch}
+                fetchApi={props.fetchApi}
+              />
+            ) : (
+              ""
+            )}
           </NavbarText>
         </Collapse>
       </Navbar>
