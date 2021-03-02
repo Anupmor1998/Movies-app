@@ -1,5 +1,5 @@
 import { Box, Image } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import NavBar from "../NavBar/NavBar";
 import "./MovieDesc.css";
@@ -38,12 +38,19 @@ function MovieDesc(props) {
       </>
     );
   }
+  // console.log(props.location.state);
   return (
     <>
       <NavBar disabled={false} />
       {movieDesc ? (
         <Box backgroundColor="#f7c59f" height="100vh">
-          <Link className="go-back" to="/">
+          <Link
+            className="go-back"
+            to={{
+              pathname: "/",
+              state: props.location.state,
+            }}
+          >
             <h1>Go Back</h1>
           </Link>
           <Box className="box">

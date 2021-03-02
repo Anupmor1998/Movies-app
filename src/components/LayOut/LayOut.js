@@ -24,6 +24,7 @@ function Layout(props) {
               year={m.Year}
               title={m.Title}
               search={props.search}
+              movie={props.movie}
             />
           ))}
         </SimpleGrid>

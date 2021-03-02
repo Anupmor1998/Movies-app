@@ -3,10 +3,14 @@ import { Box, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import "./Card.css";
 import noImage from "../Card/no-image.png";
-function Card({ poster, year, title }) {
+function Card({ poster, year, title, movie }) {
+  // console.log(movie);
   return (
     <div>
-      <Link to={`/movie/${title}`} style={{ textDecoration: "none" }}>
+      <Link
+        to={{ pathname: `/movie/${title}`, state: movie }}
+        style={{ textDecoration: "none" }}
+      >
         <Box className="card" borderRadius="3xl" backgroundColor="#e9c46a">
           <Image
             className="card-img"
