@@ -6,7 +6,7 @@ function Movie(props) {
   const [search, setSearch] = useState("avengers");
   const [movie, setMovie] = useState("");
   const [loader, setLoader] = useState(true);
-  const [setter, setSetter] = useState(props.location.state || null);
+  // const [setter, setSetter] = useState(props.location.state || null);
 
   useEffect(() => {
     fetchApi();
@@ -15,11 +15,11 @@ function Movie(props) {
     const url = `https://omdbapi.com/?s=${search}&apikey=c3a3abad`;
     const response = await fetch(url);
     const resJson = await response.json();
-    if (setter) {
-      setMovie(setter);
+    if (props.location.state) {
+      setMovie(props.location.state);
       window.history.replaceState(null, "");
-      setSetter(null);
-      console.log(setter);
+      // setSetter(null);
+      // console.log(setter);
     } else {
       setMovie(resJson);
     }
