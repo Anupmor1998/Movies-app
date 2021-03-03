@@ -17,7 +17,7 @@ function Movie(props) {
     const resJson = await response.json();
     if (setter) {
       setMovie(setter);
-      // window.history.replaceState(null);
+      window.history.replaceState(null, "");
       setSetter(null);
       console.log(setter);
     } else {
